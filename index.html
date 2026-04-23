@@ -1,24 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>College Navigation</title>
-  <link rel="stylesheet" href="layout.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Horizon Knowledge Park | Campus Navigator</title>
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<h1>College Navigation</h1>
+    <header class="app-header">
+        <div class="header-left">
+            <div class="logo-area">
+                <i class="fas fa-compass"></i>
+                <div class="logo-text">
+                    <strong>NHKP</strong> <span>Navigator</span>
+                </div>
+            </div>
+        </div>
 
-<select id="location">
-  <option>Select Location</option>
-  <option value="library">Library</option>
-  <option value="canteen">Canteen</option>
-</select>
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="mainSearch" placeholder="Search for Blocks, Departments, or Halls...">
+            </div>
+        </div>
 
-<button onclick="showRoute()">Find Route</button>
+        <div class="header-actions">
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <button class="profile-pill"><img src="https://ui-avatars.com/api/?name=User&background=27ae60&color=fff" alt="User"> <span>Guest</span></button>
+        </div>
+    </header>
 
-<p id="result"></p>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h3>Campus Directory</h3>
+                <p>10 Major Blocks Identified</p>
+            </div>
+            
+            <div class="filter-row">
+                <button class="chip active">All</button>
+                <button class="chip">Academic</button>
+                <button class="chip">Hostels</button>
+            </div>
 
-<script src="navigator.js"></script>
+            <div class="directory-list" id="directory">
+                </div>
+        </aside>
 
+        <main class="map-viewport">
+            <div class="map-wrapper" id="mapWrapper">
+                <div class="zoom-controls">
+                    <button id="zoomIn"><i class="fas fa-plus"></i></button>
+                    <button id="zoomOut"><i class="fas fa-minus"></i></button>
+                </div>
+                
+                <div class="map-container" id="mapContainer">
+                    <img src="image_0849fb.jpg" alt="Campus Layout" class="map-image">
+                    </div>
+            </div>
+
+            <div class="detail-drawer" id="detailDrawer">
+                <button class="close-drawer" id="closeDrawer">&times;</button>
+                <div id="drawerContent">
+                    </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="navigator.js"></script>
 </body>
 </html>
